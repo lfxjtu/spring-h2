@@ -10,16 +10,14 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class H2DemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(H2DemoApplication.class, args);
+    public static void main(String[] args) {
+        SpringApplication.run(H2DemoApplication.class, args);
 
-	}
+    }
 
-	@Bean
-	CommandLineRunner commandLineRunner(BookRepository bookRepository){
-		return args -> {
-			bookRepository.save(new Book(null, "Spring Boot: Up and Running", 999, "Mark L"));
-		};
-	}
+    @Bean
+    CommandLineRunner commandLineRunner(BookRepository bookRepository) {
+        return args -> bookRepository.save(new Book(null, "Spring Boot: Up and Running", 999, "Mark L"));
+    }
 
 }
